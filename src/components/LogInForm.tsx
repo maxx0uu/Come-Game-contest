@@ -14,13 +14,13 @@ export const LogInForm = (props: any) => {
 			.then((userCredential) => {
 				// Signed in
 				const createdUser = userCredential.user;
-				console.log(userCredential.user);
+				console.log(createdUser);
 				// ...
 			})
 			.catch((error) => {
 				const errorCode = error.code;
 				const errorMessage = error.message;
-				// ..
+				console.log(errorCode + errorMessage);
 			});
 		navigate("/");
 	};

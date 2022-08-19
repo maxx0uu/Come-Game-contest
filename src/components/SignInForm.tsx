@@ -20,6 +20,7 @@ export const SignInForm = (props: any) => {
 			.catch((error) => {
 				const errorCode = error.code;
 				const errorMessage = error.message;
+				console.log(errorCode + errorMessage);
 			});
 		navigate("/");
 	};
