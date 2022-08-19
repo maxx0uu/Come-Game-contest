@@ -1,6 +1,9 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
+import { useNavigate } from "react-router-dom";
+
 export const LogInForm = (props: any) => {
+	const navigate = useNavigate();
 	const handleLogIn = (e: any) => {
 		e.preventDefault();
 		createUserWithEmailAndPassword(
@@ -19,6 +22,7 @@ export const LogInForm = (props: any) => {
 				const errorMessage = error.message;
 				// ..
 			});
+		navigate("/");
 	};
 
 	return (
@@ -39,7 +43,7 @@ export const LogInForm = (props: any) => {
 						type="submit"
 						className="text-2xl font-light bg-nightblue rounded-2xl px-8 py-4"
 					>
-						Se connecter
+						Créer un compte
 					</button>
 				</form>
 			</div>

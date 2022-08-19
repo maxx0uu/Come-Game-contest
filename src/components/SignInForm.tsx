@@ -1,6 +1,8 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 export const SignInForm = (props: any) => {
+	const navigate = useNavigate();
 	const handleSignIn = (e: any) => {
 		e.preventDefault();
 		signInWithEmailAndPassword(
@@ -19,6 +21,7 @@ export const SignInForm = (props: any) => {
 				const errorCode = error.code;
 				const errorMessage = error.message;
 			});
+		navigate("/");
 	};
 
 	return (

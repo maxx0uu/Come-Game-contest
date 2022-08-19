@@ -14,13 +14,7 @@ export const Nav = ({ userConnected, setUserConnected }: NavProps) => {
 					: "fixed w-screen bottom-0 h-24 bg-nightblue rounded-t-2xl text-white text-center"
 			}
 		>
-			<div
-				className={
-					userConnected == null
-						? "h-full flex justify-between items-center max-w-6xl mx-auto px-8"
-						: "h-full flex justify-end items-center max-w-6xl mx-auto px-8"
-				}
-			>
+			<div className="h-full flex justify-between items-center max-w-6xl mx-auto px-8">
 				{userConnected == null ? (
 					<>
 						<Link to="/signin" className="flex flex-col items-center">
@@ -37,6 +31,15 @@ export const Nav = ({ userConnected, setUserConnected }: NavProps) => {
 					</>
 				) : (
 					<>
+						{userConnected.uid === "Ldk6C3XuHicKbOxokQ1q3LmQ6mp1" ? (
+							<Link to="/adminpanel" className="flex flex-col items-center">
+								<img
+									src={require("../assets/Admin.png")}
+									alt="Déconnexion du compte"
+								/>
+								<p>Accès admin</p>
+							</Link>
+						) : null}
 						<Link
 							to="/"
 							className="flex flex-col items-center"
@@ -46,7 +49,7 @@ export const Nav = ({ userConnected, setUserConnected }: NavProps) => {
 								src={require("../assets/Disconnect.png")}
 								alt="Déconnexion du compte"
 							/>
-							<p>Créer un compte</p>
+							<p>Se déconnecter</p>
 						</Link>
 					</>
 				)}

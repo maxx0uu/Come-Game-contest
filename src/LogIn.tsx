@@ -10,7 +10,7 @@ function LogIn({ userConnected, setUserConnected }: LogInProps) {
 	return (
 		<>
 			<Header />
-			<main className="h-screen w-screen top-0 bg-[url('./assets/background.jpg')] bg-center bg-cover pt-20">
+			<main className="h-screen w-screen top-0 bg-[url('./assets/background.jpg')] bg-center bg-cover bg-fixed pt-20">
 				<section className="px-8 text-white text-center font-semibold flex flex-col gap-4 py-12 max-w-6xl mx-auto">
 					<LogInForm auth={auth} />
 				</section>
