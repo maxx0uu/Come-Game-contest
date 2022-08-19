@@ -41,7 +41,7 @@ function AdminPanel({
 			filteredWinner.map((winner: any) => {
 				const tempArray = winnerArray.push(winner);
 				setWinnerArray(winnerArray);
-				console.log(winnerArray);
+				return console.log(winnerArray);
 			});
 		} else {
 			console.log("Tirage des gagnants en cours");
